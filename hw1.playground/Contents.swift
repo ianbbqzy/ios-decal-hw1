@@ -21,16 +21,15 @@ class Words {
 //: ### Are the values passed in to the **init** function and those set to the instance
 //: ### variables the same type? If not, why?
 
-
-//: [EXPLAIN YOUR ANSWER HERE]
+//: No. String!'s are implicitly unwrapped optionals, while String?'s are allowed to be nil
 
 
 //: ## Q2: Variable Types and Function Types
-    func arePalindromes(words: [String]) -> Bool {
+    static func arePalindromes(words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reverse())}
         var numElements = words.count
         
-        for let i = 0; i < numElements; i++ {
+        for var i = 0; i < numElements; i++ {
             if words[i] != reversedWords[i] {
                 return false
             }
@@ -41,7 +40,7 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: if words.count is 0, the func doesn't return a Bool
 
 
 //: ## Q3: More Functions and Object Initialization
